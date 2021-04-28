@@ -1,4 +1,4 @@
-package com.stellarscript.youtubevideo;
+package com.stremio.youtubevideo;
 
 public interface YouTubeEventListener {
 

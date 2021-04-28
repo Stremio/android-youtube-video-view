@@ -7,6 +7,6 @@
 2. Add this dependency in your application level build.gradle file
     ```gradle
     dependencies {
-      compile 'com.github.NikolaBorislavovHristov:android-youtube-video-view:+'
+      compile 'com.github.stremio:android-youtube-video-view:+'
     }
     ```

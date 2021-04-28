@@ -1,4 +1,4 @@
-package com.stellarscript.youtubevideo;
+package com.stremio.youtubevideo;
 
 import android.annotation.TargetApi;
 import android.net.Uri;

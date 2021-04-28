@@ -1,4 +1,4 @@
-package com.stellarscript.youtubevideo;
+package com.stremio.youtubevideo;
 
 import android.content.Context;
 import android.os.Build;
