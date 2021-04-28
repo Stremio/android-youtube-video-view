@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <style>
         html,
@@ -31,6 +32,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="root-container">
         <div id="player-container"></div>
@@ -233,7 +235,7 @@
             }
         }
 
-        window.onresize = function () {
+        window.onresize = function() {
             if (player === null) {
                 return;
             }
@@ -244,9 +246,11 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         if (typeof YT === 'undefined') {
-            onError({ data: 'YouTube player failed to load.' });
+            onError({
+                data: 'YouTube player failed to load.'
+            });
         } else {
-            YT.ready(function () {
+            YT.ready(function() {
                 player = new YT.Player('player-container', {
                     height: '100%',
                     width: '100%',
@@ -273,4 +277,5 @@
         }
     </script>
 </body>
+
 </html>
