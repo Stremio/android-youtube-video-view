@@ -8,6 +8,7 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
+import android.util.Base64;
 
 import java.io.InputStream;
 import java.text.MessageFormat;
@@ -16,8 +17,8 @@ public final class YouTubeVideoView extends FrameLayout {
 
     private static final String PUBLIC_JAVASCRIPT_INTERFACE_NAME = "PublicAndroidBridge";
     private static final String INTERNAL_JAVASCRIPT_INTERFACE_NAME = "InternalAndroidBridge";
-    private static final String HTML_MIME_TYPE = "text/html; charset=utf-8";
-    private static final String HTML_ENCODING = "UTF-8";
+    private static final String HTML_MIME_TYPE = "text/html";
+    private static final String HTML_ENCODING = "base64";
     private static final String LOAD_MEDIA_COMMAND_FORMAT = "loadMedia(''{0}'', {1}, {2})";
     private static final String SEEK_COMMAND_FORMAT = "seek({0})";
     private static final String PAUSE_COMMAND = "pause()";
@@ -71,7 +72,7 @@ public final class YouTubeVideoView extends FrameLayout {
         mWebView.setWebViewClient(webViewClient);
 
         final InputStream iFrameHTMLRaw = getResources().openRawResource(R.raw.youtube_iframe);
-        final String iFrameHTML = Utils.streamToString(iFrameHTMLRaw);
+        final String iFrameHTML = Base64.encodeToString(Utils.streamToString(iFrameHTMLRaw).getBytes(), Base64.NO_PADDING);
         mWebView.loadData(iFrameHTML, HTML_MIME_TYPE, HTML_ENCODING);
     }
 
